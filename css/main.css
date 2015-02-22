@@ -225,7 +225,26 @@ body {
             transform: translateY(0);
   }
 }
+
+@keyframes slide-down {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 @-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -253,7 +272,7 @@ body {
   height: 32px;
 }
 
-/* ANWERS LIST */
+/* ANSWERS LIST */
 .answers {
   margin-bottom: 20px;
 }
@@ -265,11 +284,11 @@ body {
   border-bottom: 1px solid #F5F5F5;
   background: #fff;
   font-size: 18px;
-  -webkit-transition: 1s all;
-          transition: 1s all;
+  -webkit-transition: .5s background;
+          transition: .5s background;
   cursor: pointer;
-  -webkit-animation: fade-in .5s linear;
-          animation: fade-in .5s linear;
+  -webkit-animation: fade-in 1s;
+          animation: fade-in 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-iteration-count: 1;

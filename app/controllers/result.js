@@ -13,6 +13,7 @@ function ResultController($scope, $location, config, TransferService) {
 		var points = ( value / 100 ) * percent;
 		$scope.totalScore += points;
 	});
+		
 	
 	function startAgain() {
 		//clear stored answers
