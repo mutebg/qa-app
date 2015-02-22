@@ -1,0 +1,30 @@
+<appheader htitle=" :: question.title ">
+	<piecircle pcurrent="::currentPercent" 	pmax="100" 			punit="%"></piecircle>
+	<piecircle pcurrent="currentTime" 		pmax=" ::totalTime "	punit="s"></piecircle>
+</appheader>
+
+<div class="content">
+	
+	<div 
+		ng-show=" currentTime <= 5 && currentTime >= 0 "
+		class="alert alert__error fadein-animation"> 
+		Please choise one, only <strong>{{currentTime}}</strong> seconds remaining
+	</div>
+
+	<p class="question">{{:: question.text }}</p>
+	<ul class="answers">
+		<li 
+			ng-repeat="option in question.options"
+			ng-click="selectAnswer( option.id) " 
+			ng-class="{'answers__item--selected': isSelected( option.id ) }"
+			class="answers__item"
+			>
+			{{:: option.text }}
+		</li>
+	</ul>
+	<button 
+		tabindex="100"
+		ng-show="selectedAnswer"
+		ng-click="nextQuestion()"
+		class="btn fadein-animation">{{ :: isFinalStep ? 'Finish' : 'Next' }}</button>
+</div>

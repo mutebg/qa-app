@@ -1,0 +1,47 @@
+html, 
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+body {
+	background-color: #E5E5E5;
+	min-height: 100%;
+	font: 18px/1.2 'Roboto', sans-serif;;
+}
+
+.main {
+	position: relative;
+	width: 80%;
+	max-width: 900px;
+	min-height: 100%;
+	margin: 0 auto;
+	background: #fff;
+}
+
+
+.header {
+  	display: flex;
+	height: 80px;
+  	padding: 0 30px;
+  	align-items: center;
+  	flex-direction: row;
+  	justify-content: space-between;
+	background-color: #00bad2;
+  	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  	color: #fff;
+  	//animation: slide-down .2s linear;
+}
+
+.header__title {
+	font-size: 24px;
+}
+
+.header__actions {
+
+}
+
+.content {
+	padding: 30px;
+}

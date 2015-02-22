@@ -1,0 +1,223 @@
+@import "_parts/variables";
+@import "_parts/reset";
+@import "_parts/buttons";
+@import "_parts/layout";
+@import "_parts/alerts";
+@import "_parts/animate";
+
+
+.question {
+	padding: 25px;
+ 	font-size: 32px;
+ 	animation: fade-in 1s linear;
+}
+
+.welcome {
+	@extend .question;
+	text-align: center;
+
+	+ p {
+		text-align: center;
+		margin-bottom: 40px
+	}
+}
+
+.icon {
+	width: 32px;
+	height: 32px;
+}
+
+/* ANWERS LIST */
+.answers {
+	margin-bottom: 20px
+}
+
+.answers__item {
+	position: relative;
+	display: block;
+	padding: 25px;
+	border-bottom: 1px solid $grayColor;
+	background: #fff;
+	font-size: 18px;
+	transition: 1s all;
+	cursor: pointer;
+	animation: fade-in .5s linear;
+	animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 0;
+
+	$i: 1;
+	@while $i <= 4 {
+		&:nth-child(#{$i}){
+  			animation-delay: #{$i * 0.2}s;
+  		}
+  		$i: $i + 1;
+	}
+	
+	&:hover {
+		background: $grayColor;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		display: inline-block;
+		transition: .4s all;
+	}
+
+	&:before {
+		position: relative;
+		top: 3px;
+		width: 14px;
+		height: 14px;
+		margin-right: 10px;
+		border: 2px solid #757575;
+		border-radius: 2px;
+		background: #FCFCFC;
+	}
+}
+
+.answers__item--selected {
+	background: darken( $grayColor, 5% );
+
+	&:before {
+		background: $activeColor;
+		border-color: $activeColor;
+	}
+
+	&:after {
+		position: absolute;
+		left: 31px;
+		width: 4px;
+		height: 9px;
+		margin-top: 5px;
+		border-right: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		transform: rotate(40deg);
+	}
+}
+
+
+//RESULT
+.result {
+	position: relative;
+	height: 180px;
+	margin-bottom: 20px
+}
+
+.result__scale {
+	position: relative;
+	display: inline-block;
+	height: 40px;
+	width: 100%;
+	border-radius: 10px;
+	background: linear-gradient(to left, rgba(3,160,71, .7) 0%, rgba(239,239,0, .7) 50%, rgba(223,23,33, .7) 100%);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+
+	&:before,
+	&:after {
+		position: absolute;
+		line-height: 40px;
+	}
+
+	&:before {
+		content: "0";
+		left: 20px;
+	}
+
+	&:after {
+		content: "100";
+		right: 20px;
+	}
+}
+
+$resultSize: 100px;
+.result__score {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: $resultSize;
+	height: $resultSize;
+	z-index: 2;
+	margin-left: -($resultSize / 2);
+	border-radius: 50%;
+	background: $activeColor;
+	transition: 2s all;
+	color: #fff;
+	line-height: $resultSize;
+	font-size: 48px;
+	text-align: center;
+	box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.4);
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -40px;
+		left: 48px;
+		width: 6px;
+		height: 70px;
+		z-index: 1;
+		border-radius: 50%;
+		background: $activeColor;
+	}
+}
+
+/* PIE CIRCLE CSS */
+$circleWidth: 48px;
+.circle {
+    position: relative;
+	display: inline-block;
+    width: $circleWidth;
+    height: $circleWidth;
+    overflow: hidden;
+	margin-left: 10px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.circle__mask {
+    position: absolute;
+    width: $circleWidth / 2;
+    height: $circleWidth;
+    z-index: 300;
+    opacity: 1;
+    border-radius: $circleWidth / 2 0 0 $circleWidth / 2;
+    background: inherit;
+}
+
+.circle__pie {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transform-origin: 100% 50%;
+    border: 5px solid lighten($activeColor, 30%);
+    transition: all .5s;
+}
+
+.circle__pie--spinner {
+    z-index: 200;
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    border-right: none;
+}
+
+.circle__pie--filler {
+    left: 50%;
+    z-index: 100;
+    opacity: 0;
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+    border-left: none;
+}
+
+
+.circle__content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 400;
+	color: $activeColor;
+	text-align: center;
+	line-height: $circleWidth;
+	font-size: 80%;
+	transition: all .5s;
+}
