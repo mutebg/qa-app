@@ -3,7 +3,7 @@
 	padding: 15px 25px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 	border-radius: 3px;
-	transition: .5s linear all;
+	transition: $transitionTime linear all;
 }
 
 .alert__success {

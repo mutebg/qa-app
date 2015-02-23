@@ -2,10 +2,10 @@ function TransferService(config) {
 
 	var data = JSON.parse(localStorage.getItem(config.LOCAL_STORAGE) || '{}');
 
-	function set(key, item, tempSave) {
+	function set(key, item, noSave) {
 		data[key] = item;
 
-		if (tempSave !== true) {
+		if (noSave !== true) {
 			localStorage.setItem(config.LOCAL_STORAGE, JSON.stringify(data));
 		}
 	}

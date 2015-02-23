@@ -5,9 +5,10 @@ function appHeader() {
         scope: {
             htitle: '='
         },
-        template: '<div class="header">' +
-            '<h1 class="header__title">{{ htitle }}</h1>' +
-            '<div class="header__actions" ng-transclude></div>' +
+        template: 
+            '<div class="header">' +
+                '<h1 class="header__title">{{ htitle }}</h1>' +
+                '<div class="header__actions" ng-transclude></div>' +
             '</div>'
     };
 }
@@ -21,11 +22,12 @@ function pieCircle() {
             pmax: '=',
             punit: '@'
         },
-        template: '<div class="circle">' +
-            '<div class="circle__pie circle__pie--spinner"></div>' +
-            '<div class="circle__pie circle__pie--filler"></div>' +
-            '<div class="circle__mask"></div>' +
-            '<div class="circle__content"></div>' +
+        template: 
+            '<div class="circle">' +
+                '<div class="circle__pie circle__pie--spinner"></div>' +
+                '<div class="circle__pie circle__pie--filler"></div>' +
+                '<div class="circle__mask"></div>' +
+                '<div class="circle__content"></div>' +
             '</div>',
         link: function(scope, element) {
             var divs = element.find('div');
