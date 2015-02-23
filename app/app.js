@@ -25,5 +25,5 @@ angular
         'LOCAL_STORAGE': 'QA',
         'STORE_TEST': 'current_test',
         'STORE_ANSWERS': 'user_anwers',
-        'QUESTION_TIME': 20
+        'QUESTION_TIME': 30
     });

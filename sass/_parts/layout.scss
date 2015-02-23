@@ -29,7 +29,7 @@ body {
   	align-items: center;
   	flex-direction: row;
   	justify-content: space-between;
-	background-color: #00bad2;
+	background-color: $activeColor;
   	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   	color: #fff;
 }

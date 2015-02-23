@@ -60,7 +60,7 @@ a {
   padding: 15px 25px;
   border: 0;
   border-radius: 3px;
-  background-color: #00bad2;
+  background-color: #4285F4;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
   font-size: 25px;
@@ -70,7 +70,7 @@ a {
   cursor: pointer;
 }
 .btn:hover {
-  background-color: #008d9f;
+  background-color: #1266f1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   -webkit-transform: translateY(-1px);
       -ms-transform: translateY(-1px);
@@ -120,7 +120,7 @@ body {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #00bad2;
+  background-color: #4285F4;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   color: #fff;
 }
@@ -338,11 +338,12 @@ body {
 }
 
 .answers__item--selected {
-  background: #F5F5F5;
+  background: #E8E8E8;
+  color: #4285F4;
 }
 .answers__item--selected:before {
-  border-color: #00bad2;
-  background: #00bad2;
+  border-color: #4285F4;
+  background: #4285F4;
 }
 .answers__item--selected:after {
   position: absolute;
@@ -395,7 +396,7 @@ body {
   z-index: 2;
   margin-left: -50px;
   border-radius: 50%;
-  background: #00bad2;
+  background: #4285F4;
   -webkit-transition: 2s all;
           transition: 2s all;
   color: #fff;
@@ -413,7 +414,7 @@ body {
   height: 70px;
   z-index: 1;
   border-radius: 50%;
-  background: #00bad2;
+  background: #4285F4;
 }
 
 /* PIE CIRCLE CSS */
@@ -445,7 +446,7 @@ body {
   -webkit-transform-origin: 100% 50%;
       -ms-transform-origin: 100% 50%;
           transform-origin: 100% 50%;
-  border: 5px solid #6ceeff;
+  border: 5px solid #d3e2fc;
   -webkit-transition: all .5s;
           transition: all .5s;
 }
@@ -470,7 +471,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 400;
-  color: #00bad2;
+  color: #4285F4;
   text-align: center;
   line-height: 48px;
   font-size: 80%;

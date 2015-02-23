@@ -83,6 +83,7 @@
 
 .answers__item--selected {
 	background: $grayColor;
+	color: $activeColor;
 	
 	&:before {
 		border-color: $activeColor;
