@@ -1,6 +1,6 @@
 /* Animation between veiws */
 .view-animation {
-    transition: .4s ease all;
+    transition: $transitionTime all;
     
     &.ng-enter,
     &.ng-leave {
@@ -39,7 +39,7 @@
     
     &.ng-hide-add.ng-hide-add-active,
     &.ng-hide-remove.ng-hide-remove-active {
-        transition: all .5s;
+        transition: all $transitionTime;
     }
 
     &.ng-hide {

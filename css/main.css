@@ -88,6 +88,7 @@ body {
   background-color: #E5E5E5;
   min-height: 100%;
   font: 18px/1.2 'Roboto', sans-serif;
+  color: #4C4C4C;
 }
 
 .main {
@@ -167,8 +168,8 @@ body {
 
 /* Animation between veiws */
 .view-animation {
-  -webkit-transition: .4s ease all;
-          transition: .4s ease all;
+  -webkit-transition: 0.5s all;
+          transition: 0.5s all;
 }
 .view-animation.ng-enter, .view-animation.ng-leave {
   position: absolute;
@@ -208,8 +209,8 @@ body {
   opacity: 1;
 }
 .fadein-animation.ng-hide-add.ng-hide-add-active, .fadein-animation.ng-hide-remove.ng-hide-remove-active {
-  -webkit-transition: all .5s;
-          transition: all .5s;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
 }
 .fadein-animation.ng-hide {
   opacity: 0;
@@ -281,11 +282,11 @@ body {
   position: relative;
   display: block;
   padding: 25px;
-  border-bottom: 1px solid #F5F5F5;
+  z-index: 1;
   background: #fff;
   font-size: 18px;
-  -webkit-transition: .5s background;
-          transition: .5s background;
+  -webkit-transition: 0.5s background, box-shadow 0.5s, -webkit-transform 0.5s;
+          transition: 0.5s background, box-shadow 0.5s, transform 0.5s;
   cursor: pointer;
   -webkit-animation: fade-in 1s;
           animation: fade-in 1s;
@@ -294,6 +295,7 @@ body {
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   opacity: 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 .answers__item:nth-child(1) {
   -webkit-animation-delay: 0.2s;
@@ -312,13 +314,17 @@ body {
           animation-delay: 0.8s;
 }
 .answers__item:hover {
-  background: #F5F5F5;
+  -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+  z-index: 2;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.25);
 }
 .answers__item:before, .answers__item:after {
   content: "";
   display: inline-block;
-  -webkit-transition: .4s all;
-          transition: .4s all;
+  -webkit-transition: 0.5s all;
+          transition: 0.5s all;
 }
 .answers__item:before {
   position: relative;
@@ -332,11 +338,11 @@ body {
 }
 
 .answers__item--selected {
-  background: #e8e8e8;
+  background: #F5F5F5;
 }
 .answers__item--selected:before {
-  background: #00bad2;
   border-color: #00bad2;
+  background: #00bad2;
 }
 .answers__item--selected:after {
   position: absolute;
@@ -344,11 +350,11 @@ body {
   width: 4px;
   height: 9px;
   margin-top: 5px;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
   -webkit-transform: rotate(40deg);
       -ms-transform: rotate(40deg);
           transform: rotate(40deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .result {
@@ -468,6 +474,6 @@ body {
   text-align: center;
   line-height: 48px;
   font-size: 80%;
-  -webkit-transition: all .5s;
-          transition: all .5s;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
 }

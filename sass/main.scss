@@ -36,15 +36,17 @@
 	position: relative;
 	display: block;
 	padding: 25px;
-	border-bottom: 1px solid $grayColor;
+	z-index: 1;
+	//border-bottom: 1px solid $grayColor;
 	background: #fff;
 	font-size: 18px;
-	transition: .5s background;
+	transition: $transitionTime background, box-shadow $transitionTime, transform $transitionTime;
 	cursor: pointer;
 	animation: fade-in 1s;
 	animation-fill-mode: forwards;
     animation-iteration-count: 1;
     opacity: 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
     
 	$i: 1;
 	@while $i <= 4 {
@@ -55,14 +57,16 @@
 	}
 	
 	&:hover {
-		background: $grayColor;
+		transform: translateY( -1px );
+		z-index: 2;
+		box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.25);
 	}
 
 	&:before,
 	&:after {
 		content: "";
 		display: inline-block;
-		transition: .4s all;
+		transition: $transitionTime all;
 	}
 
 	&:before {
@@ -78,11 +82,11 @@
 }
 
 .answers__item--selected {
-	background: darken( $grayColor, 5% );
-
+	background: $grayColor;
+	
 	&:before {
-		background: $activeColor;
 		border-color: $activeColor;
+		background: $activeColor;
 	}
 
 	&:after {
@@ -91,9 +95,9 @@
 		width: 4px;
 		height: 9px;
 		margin-top: 5px;
+		transform: rotate(40deg);
 		border-right: 2px solid #fff;
 		border-bottom: 2px solid #fff;
-		transform: rotate(40deg);
 	}
 }
 
@@ -111,7 +115,10 @@
 	height: 40px;
 	width: 100%;
 	border-radius: 10px;
-	background: linear-gradient(to left, rgba(3,160,71, .7) 0%, rgba(239,239,0, .7) 50%, rgba(223,23,33, .7) 100%);
+	background: linear-gradient(to left, 
+		rgba(3,160,71, .7) 0%, 
+		rgba(239,239,0, .7) 50%, 
+		rgba(223,23,33, .7) 100%);
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 
 	&:before,
@@ -131,7 +138,6 @@
 	}
 }
 
-$resultSize: 100px;
 .result__score {
 	position: absolute;
 	top: 50px;
@@ -162,8 +168,8 @@ $resultSize: 100px;
 	}
 }
 
+
 /* PIE CIRCLE CSS */
-$circleWidth: 48px;
 .circle {
     position: relative;
 	display: inline-block;
@@ -181,7 +187,7 @@ $circleWidth: 48px;
     height: $circleWidth;
     z-index: 300;
     opacity: 1;
-    border-radius: $circleWidth / 2 0 0 $circleWidth / 2;
+    border-radius: ( $circleWidth / 2 ) 0 0 ( $circleWidth / 2 );
     background: inherit;
 }
 
@@ -219,5 +225,5 @@ $circleWidth: 48px;
 	text-align: center;
 	line-height: $circleWidth;
 	font-size: 80%;
-	transition: all .5s;
+	transition: all $transitionTime;
 }
